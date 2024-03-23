@@ -3,6 +3,7 @@ import "./globals.css";
 import { MantineProvider, createTheme } from "@mantine/core";
 import '@mantine/core/styles.css';
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
