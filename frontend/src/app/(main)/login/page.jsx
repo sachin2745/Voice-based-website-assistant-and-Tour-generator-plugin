@@ -53,8 +53,8 @@ export function Login(props) {
 
   return (
     <MantineProvider theme={theme} >
-      <Container size="responsive" px={0} bg="white" >
-        <Paper radius="md" p="xl" withBorder {...props} h={400} size="xxs">
+      <Container size="responsive" px={0} bg="white" mt={50}>
+        <Paper radius="md" p="xl" withBorder {...props} h={500} size="xxs" className={classes.Container}>
           <Text size="lg" fw={500}>
             Welcome to Mantine, {type} with
           </Text>
@@ -130,7 +130,8 @@ export function Login(props) {
                   ? "Already have an account? Login"
                   : "Don't have an account? Register"}
               </Anchor>
-              <Button type="submit" radius="xl">
+              <Button type="submit" radius="xl" variant="gradient"
+                  gradient={{ from: 'gray', to: 'red', deg: 11 }}>
                 {upperFirst(type)}
               </Button>
             </Group>
