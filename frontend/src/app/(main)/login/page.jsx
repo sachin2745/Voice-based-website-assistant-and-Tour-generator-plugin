@@ -19,6 +19,7 @@ import { TwitterButton } from "./TwitterButton"
 import classes from './login.module.css';
 import cx from 'clsx';
 import { MantineProvider, Container, createTheme } from '@mantine/core';
+import Link from 'next/link';
 
 const theme = createTheme({
   components: {
@@ -119,16 +120,8 @@ export function Login(props) {
             </Stack>
 
             <Group justify="space-between" mt="xl">
-              <Anchor
-                component="button"
-                type="button"
-                c="dimmed"
-                onClick={() => toggle()}
-                size="xs"
-              >
-                {type === "register"
-                  ? "Already have an account? Login"
-                  : "Don't have an account? Register"}
+            <Anchor component={Link} underline="hover" type="button" c="dimmed" href="/signup" size="xs">
+                Don't have an account? Register
               </Anchor>
               <Button type="submit" radius="xl" variant="gradient"
                   gradient={{ from: 'gray', to: 'red', deg: 11 }}>
