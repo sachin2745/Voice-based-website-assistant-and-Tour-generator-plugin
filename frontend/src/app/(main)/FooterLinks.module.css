@@ -1,5 +1,5 @@
 .footer {
-    margin-top: rem(120px);
+    margin-top: rem(0px);
     padding-top: calc(var(--mantine-spacing-xl) * 2);
     padding-bottom: calc(var(--mantine-spacing-xl) * 2);
     background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
@@ -7,7 +7,7 @@
   }
   
   .logo {
-    max-width: rem(200px);
+    max-width: rem(300px);
   
     @media (max-width: $mantine-breakpoint-sm) {
       display: flex;
@@ -46,6 +46,7 @@
   
   .wrapper {
     width: rem(160px);
+    
   }
   
   .link {
@@ -54,7 +55,7 @@
     font-size: var(--mantine-font-size-sm);
     padding-top: rem(3px);
     padding-bottom: rem(3px);
-  
+    
     &:hover {
       text-decoration: underline;
     }
