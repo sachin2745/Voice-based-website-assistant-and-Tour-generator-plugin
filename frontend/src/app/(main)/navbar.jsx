@@ -31,6 +31,7 @@ import {
   IconChevronDown,
 } from '@tabler/icons-react';
 import classes from './navbar.module.css';
+import ActionToggle from './ActionToggle';
 
 const mockdata = [
   {
@@ -148,15 +149,17 @@ function Navbar() {
             <a href="/contact" className={classes.link}>
               Contact us
             </a>
+            <ActionToggle/>
           </Group>
 
           <Group visibleFrom="sm">
             <Button variant="default"><a href='/login'>Log in</a></Button>
             <Button><a href='/signup'>Sign up</a></Button>
           </Group>
-
+          
           <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
         </Group>
+       
       </header>
 
       <Drawer
@@ -192,6 +195,7 @@ function Navbar() {
           <a href="#" className={classes.link}>
             Academy
           </a>
+          
 
           <Divider my="sm" />
 

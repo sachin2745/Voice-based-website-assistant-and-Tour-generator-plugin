@@ -69,7 +69,7 @@ function Contact() {
           />
 
           <Group justify="flex-end" mt="md">
-            <Button className={classes.control}>Send message</Button>
+            <Button className={classes.control} variant='outline' color="rgba(255, 255, 255, 1)">Send message</Button>
           </Group>
         </div>
       </SimpleGrid>
