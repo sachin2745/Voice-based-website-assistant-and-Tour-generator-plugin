@@ -23,6 +23,7 @@ import { MantineProvider, Container, createTheme } from '@mantine/core';
 import Link from 'next/link';
 import { BackgroundImage, Center, Box } from '@mantine/core';
 
+
 const theme = createTheme({
   components: {
     Container: Container.extend({
@@ -34,8 +35,21 @@ const theme = createTheme({
 });
 
 
-export function Login(props) {
+export function Login() {
+  const form = useForm({
+    initialValues: {
+      email: '',
+      password: '',
+      terms: true,
 
+    },
+
+    validate: {
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+      password: (value) => (value.length <= 8 ? 'Password should include at least 8 characters' : null),
+
+    },
+  });
 
 
 
@@ -49,7 +63,7 @@ export function Login(props) {
         >
           <Center p="md">
             <Container size="responsive" mt={50} h={700} w={700} >
-              <Paper withBorder shadow="md" p={30} mt={30} radius="md" p="xl" withBorder {...props} className={classes.Paper}>
+              <Paper withBorder shadow="md" p={30} mt={30} radius="md" p="xl" withBorder className={classes.Paper}>
                 <Title className={classes.title}>
                   Welcome to Mantine, Login with
                 </Title>
@@ -59,12 +73,22 @@ export function Login(props) {
                 </Group>
 
                 <Divider label="Or continue with email" labelPosition="center" my="lg" />
-                <form >
+                <form onSubmit={form.onSubmit((values) => console.log(values))}>
 
-                  <TextInput label="Email" placeholder="you@mantine.dev" required />
-                  <PasswordInput label="Password" placeholder="Your password" required mt="md" />
+                  <TextInput withAsterisk label="Email" placeholder="your@email.com"
+                    {...form.getInputProps('email')} required />
+                  <PasswordInput label="Password"
+                    placeholder="Your password"
+                    value={form.values.password}
+                    onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
+                    error={form.errors.password && 'Password should include at least 8 characters'}
+                    required mt="md" />
+                    
                   <Group justify="space-between" mt="lg">
-                    <Checkbox label="Remember me" />
+                    <Checkbox label="Remember me"
+                       checked={form.values.terms}
+                       onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
+                    />
                     <Anchor component="button" size="sm">
                       Forgot password?
                     </Anchor>
