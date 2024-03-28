@@ -23,18 +23,67 @@ import { MantineProvider, Container, createTheme } from '@mantine/core';
 import Link from 'next/link';
 import { BackgroundImage, Center, Box } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { useState } from "react"
+import { IconX, IconCheck } from "@tabler/icons-react"
+import { Progress, Popover, rem } from "@mantine/core"
+
+function PasswordRequirement({ meets, label }) {
+  return (
+    <Text
+      c={meets ? "teal" : "red"}
+      style={{ display: "flex", alignItems: "center" }}
+      mt={7}
+      size="sm"
+    >
+      {meets ? (
+        <IconCheck style={{ width: rem(14), height: rem(14) }} />
+      ) : (
+        <IconX style={{ width: rem(14), height: rem(14) }} />
+      )}{" "}
+      <Box ml={10}>{label}</Box>
+    </Text>
+  )
+}
+
+const requirements = [
+  { re: /[0-9]/, label: "Includes number" },
+  { re: /[a-z]/, label: "Includes lowercase letter" },
+  { re: /[A-Z]/, label: "Includes uppercase letter" },
+  { re: /[$&+,:;=?@#|'<>.^*()%!-]/, label: "Includes special symbol" }
+]
+
+function getStrength(password) {
+  let multiplier = password.length > 5 ? 0 : 1
+
+  requirements.forEach(requirement => {
+    if (!requirement.re.test(password)) {
+      multiplier += 1
+    }
+  })
+
+  return Math.max(100 - (100 / (requirements.length + 1)) * multiplier, 10)
+}
 
 
+export function SignUp(props) {
+  const [popoverOpened, setPopoverOpened] = useState(false)
+  const [value, setValue] = useState("")
+  const checks = requirements.map((requirement, index) => (
+    <PasswordRequirement
+      key={index}
+      label={requirement.label}
+      meets={requirement.re.test(value)}
+    />
+  ))
 
+  const strength = getStrength(value)
+  const color = strength === 100 ? "teal" : strength > 50 ? "yellow" : "red"
 
-
-export function SignUp() {
   const form = useForm({
     initialValues: {
       name: '',
       email: '',
       password: '',
-      confirmPassword: '',
       termsOfService: false,
 
     },
@@ -42,13 +91,17 @@ export function SignUp() {
     validate: {
       name: (value) => (value.length < 5 ? 'Name must have at least 5 letters' : null),
       email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-      password: (value) => (value.length <= 8 ? 'Password should include at least 8 characters' : null),
-      confirmPassword: (value, values) =>
-        value !== values.password ? 'Passwords did not match' : null,
 
     },
   });
-
+ 
+  const signupSubmit = (values) => {
+    console.log(values);
+    values.password = value;
+    console.log(values);
+    setValue('');
+    form.reset();
+  }
 
 
   return (
@@ -57,11 +110,11 @@ export function SignUp() {
       <BackgroundImage
         src="https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg"
         radius="md"
-        
+
       >
         <Center p="md">
           <Container mt={10} w={800} fluid>
-            <Paper withBorder shadow="md"  mt={30} radius="md" p="xl" withBorder className={classes.Paper}>
+            <Paper withBorder shadow="md" mt={30} {...props} radius="md" p="xl" className={classes.Paper}>
               <Title className={classes.title} >
                 Welcome to Mantine</Title>
               <Text className={classes.text}>SignUp with</Text>
@@ -76,29 +129,44 @@ export function SignUp() {
               }
                 labelPosition="center" my="lg" />
 
-              <form onSubmit={form.onSubmit((values) => console.log(values))}>
+              <form  onSubmit={form.onSubmit(signupSubmit)}>
 
                 <TextInput label="Name" placeholder="Full Name"  {...form.getInputProps('name')} />
 
                 <TextInput withAsterisk label="Email" placeholder="your@email.com"
                   {...form.getInputProps('email')} required mt="md" />
 
-                <PasswordInput label="Password"
-                  placeholder="Your password"
-                  value={form.values.password}
-                  onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
-                  error={form.errors.password && 'Password should include at least 8 characters'}
-                  mt="md"
-                  {...form.getInputProps('password')}
-                  required />
-                <PasswordInput
-                  mt="sm"
-                  label="Confirm password"
-                  placeholder="Confirm password"
-                  {...form.getInputProps('confirmPassword')}
-                  mt='md'
-                  required
-                />
+                <Popover
+                  opened={popoverOpened}
+                  position="bottom"
+                  width="target"
+                  transitionProps={{ transition: "pop" }}
+                >
+                  <Popover.Target>
+                    <div
+                      onFocusCapture={() => setPopoverOpened(true)}
+                      onBlurCapture={() => setPopoverOpened(false)}
+                    >
+                      <PasswordInput label="Password"
+                        placeholder="Your password"
+                        value={value}
+                        onChange={event => setValue(event.currentTarget.value)}
+                        error={form.errors.password && 'Password should include at least 8 characters'}
+                        mt="md"
+                        
+                        required />
+                    </div>
+                  </Popover.Target>
+                  <Popover.Dropdown>
+                    <Progress color={color} value={strength} size={5} mb="xs" />
+                    <PasswordRequirement
+                      label="Includes at least 6 characters"
+                      meets={value.length > 5}
+                    />
+                    {checks}
+                  </Popover.Dropdown>
+                </Popover>
+               
 
 
                 <Group justify="space-between" mt="lg">
