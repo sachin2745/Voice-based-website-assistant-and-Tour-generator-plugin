@@ -55,62 +55,58 @@ export function Login() {
 
   return (
     <MantineProvider theme={theme} >
-      <Box mx="auto" >
-        <BackgroundImage
-          src="https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg"
-          radius="md"
-          h={700}
-        >
-          <Center p="md">
-            <Container size="responsive" mt={20} h={700} w={700} >
-              <Paper withBorder shadow="md" p={30} mt={30} radius="md" p="xl" withBorder className={classes.Paper}>
-                <Title className={classes.title} >
-                  Welcome to Mantine</Title>
-                <Text className={classes.text}>Login with</Text>
+      <Box mx="auto" bg="white">
 
-                <Group grow mb="md" mt="md">
-                  <GoogleButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Google</GoogleButton>
-                  <TwitterButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Twitter</TwitterButton>
+        <Center p="md">
+          <Container size="responsive" mt={20}  w={700} >
+            <Paper withBorder shadow="md" p={30} mt={30} mb={30} radius="md" withBorder className={classes.Paper}>
+              <Title className={classes.title} >
+                Welcome to Mantine</Title>
+              <Text className={classes.text}>Login with</Text>
+
+              <Group grow mb="md" mt="md">
+                <GoogleButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Google</GoogleButton>
+                <TwitterButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Twitter</TwitterButton>
+              </Group>
+
+              <Divider label={
+                <p style={{ color: 'blue' }}>Or continue with email</p>
+              } labelPosition="center" my="lg" />
+
+              <form onSubmit={form.onSubmit((values) => console.log(values))}>
+
+                <TextInput withAsterisk label="Email" placeholder="your@email.com"
+                  {...form.getInputProps('email')} required />
+                <PasswordInput label="Password"
+                  placeholder="Your password"
+                  value={form.values.password}
+                  onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
+                  error={form.errors.password && 'Password should include at least 8 characters'}
+                  required mt="md" />
+
+                <Group justify="space-between" mt="lg">
+                  <Checkbox label="Remember me"
+                    checked={form.values.terms}
+                    onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
+                  />
+                  <Anchor component="button" size="sm">
+                    Forgot password?
+                  </Anchor>
                 </Group>
+                <Group justify="space-between" mt="xl">
+                  <Anchor component={Link} underline="hover" type="button" c="dimmed" href="/signup" size="xs">
+                    Don't have an account? Register
+                  </Anchor>
+                  <Button type="submit" variant="outline" color="rgba(0, 0, 0, 1)"
+                  >
+                    Login
+                  </Button>
+                </Group>
+              </form>
+            </Paper>
+          </Container>
+        </Center>
 
-                <Divider label={
-                  <p style={{ color: 'blue' }}>Or continue with email</p>
-                } labelPosition="center" my="lg" />
-
-                <form onSubmit={form.onSubmit((values) => console.log(values))}>
-
-                  <TextInput withAsterisk label="Email" placeholder="your@email.com"
-                    {...form.getInputProps('email')} required />
-                  <PasswordInput label="Password"
-                    placeholder="Your password"
-                    value={form.values.password}
-                    onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
-                    error={form.errors.password && 'Password should include at least 8 characters'}
-                    required mt="md" />
-
-                  <Group justify="space-between" mt="lg">
-                    <Checkbox label="Remember me"
-                      checked={form.values.terms}
-                      onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
-                    />
-                    <Anchor component="button" size="sm">
-                      Forgot password?
-                    </Anchor>
-                  </Group>
-                  <Group justify="space-between" mt="xl">
-                    <Anchor component={Link} underline="hover" type="button" c="dimmed" href="/signup" size="xs">
-                      Don't have an account? Register
-                    </Anchor>
-                    <Button type="submit" variant="outline" color="rgba(0, 0, 0, 1)"
-                    >
-                      Login
-                    </Button>
-                  </Group>
-                </form>
-              </Paper>
-            </Container>
-          </Center>
-        </BackgroundImage>
       </Box>
     </MantineProvider>
   )
