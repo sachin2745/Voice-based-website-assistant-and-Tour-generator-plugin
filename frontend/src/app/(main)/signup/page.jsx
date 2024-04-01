@@ -27,6 +27,7 @@ import { useState } from "react"
 import { IconX, IconCheck } from "@tabler/icons-react"
 import { Progress, Popover, rem } from "@mantine/core"
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 function PasswordRequirement({ meets, label }) {
   return (
@@ -102,25 +103,28 @@ export function SignUp(props) {
     values.password = value;
     console.log(values);
 
-    fetch('http://localhost:5000/post/add', {
+    fetch('http://localhost:5000/user/add', {
       method: 'POST',
       body: JSON.stringify(values),
       headers: {
         'Content-Type': 'application/json'
       }
-
     })
-
       .then((response) => {
         console.log(response.status);
-        toast.success('Sign Up Succcessfully');
+        if (response.status === 200) {
+          toast.success('User Registered successfully');
+          setValue('');
+          form.reset();
+          router.push('/login')
+        } else {
+          toast.error('Some Error Occured');
+        }
 
       }).catch((err) => {
         console.log(err);
+        toast.error('Some Error Occured');
       });
-
-    setValue('');
-    form.reset();
   }
 
 

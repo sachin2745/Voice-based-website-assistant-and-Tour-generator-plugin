@@ -55,7 +55,7 @@ export function Login() {
 
   return (
     <MantineProvider theme={theme} >
-      <Box mx="auto" bg="white">
+      <Box mx="auto" bg="white" > 
 
         <Center p="md">
           <Container size="responsive" mt={20}  w={700} >
