@@ -115,7 +115,16 @@ function Navbar() {
               <a href="http://localhost:3000/" className={classes.link}>
                 Home
               </a>
-              <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+              <a href="/voiceAssistant" className={classes.link}>
+                Voice Assistant
+              </a>
+              <a href="/tourGenerator" className={classes.link}>
+                Tour Generator
+              </a>
+              <a href="#" className={classes.link}>
+                Documentation
+              </a>
+              {/* <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
                 <HoverCard.Target>
                   <a href="#" className={classes.link}>
                     <Center inline>
@@ -158,7 +167,7 @@ function Navbar() {
                     </Group>
                   </div>
                 </HoverCard.Dropdown>
-              </HoverCard>
+              </HoverCard> */}
               <a href="/about" className={classes.link}>
                 About us
               </a>

@@ -12,22 +12,25 @@
 }
 
 .Paper {
-  border-radius: 59px;
-background: #ffffff;
-box-shadow: inset 10px 10px 20px #dedede,
-            inset -10px -10px 20px #ffffff;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 10px -10px 30px #ffffff,
+    -10px -10px 20px #dedede;
   color: black;
-  
+
 }
+
 .title {
   font-family:
     Greycliff CF,
     var(--mantine-font-family);
   font-weight: 1000;
   text-align: center;
+  font-size: 30px;
 }
-.text{
+
+.text {
   text-align: center;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 19px;
 }

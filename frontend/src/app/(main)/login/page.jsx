@@ -61,12 +61,12 @@ export function Login() {
           <Container size="responsive" mt={20}  w={700} >
             <Paper withBorder shadow="md" p={30} mt={30} mb={30} radius="md" withBorder className={classes.Paper}>
               <Title className={classes.title} >
-                Welcome to Mantine</Title>
+                Welcome to VoiceTour Navigator</Title>
               <Text className={classes.text}>Login with</Text>
 
               <Group grow mb="md" mt="md">
                 <GoogleButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Google</GoogleButton>
-                <TwitterButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Twitter</TwitterButton>
+                <TwitterButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Facebook</TwitterButton>
               </Group>
 
               <Divider label={

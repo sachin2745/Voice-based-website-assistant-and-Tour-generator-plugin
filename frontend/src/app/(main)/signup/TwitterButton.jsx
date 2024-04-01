@@ -7,7 +7,7 @@ export function TwitterButton(props) {
   return (
     <Button
       leftSection={
-        <IconBrandFacebookFilled
+        <IconBrandFacebook
           style={{ width: "1rem", height: "1rem" }}
           color="#00ACEE"
         />
