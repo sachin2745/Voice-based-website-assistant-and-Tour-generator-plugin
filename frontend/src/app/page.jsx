@@ -1,39 +1,101 @@
-import cx from 'clsx';
-import { Title, Text, Container, Button, Overlay } from '@mantine/core';
-// import { GithubIcon } from '@mantinex/dev-icons';
-import classes from './page.module.css';
-import { Icon3dRotate } from '@tabler/icons-react';
+'use client'
+import React from 'react'
+import {
+  Image,
+  Container,
+  Title,
+  Button,
+  Group,
+  Text,
+  List,
+  ThemeIcon,
+  rem
+} from "@mantine/core"
+import { IconCheck } from "@tabler/icons-react"
 
-export default function Home() {
+import classes from "./page.module.css"
+import FeaturesCards from './FeaturesCards'
+import Faqsection from './faqSection'
+
+
+const page = () => {
   return (
-    <div className={classes.wrapper}>
-      <Overlay color="#000" opacity={0.65} zIndex={1} />
+    <>
+      <section>
+        <Container size="md" p={0}>
+          <div className={classes.inner}>
+            <div className={classes.content}>
+              <Title className={classes.title}>
+                <span className={classes.subtitle} >Welcome to<br /></span>
+                {/* <span className={classes.highlight}> */}
+                VoiceTour 
+                {/* </span>  */}
+                Navigator <br />{" "}
+                Plugin System
+              </Title>
+              <Text c="dimmed" mt="md">
+              Revolutionizing Website Navigation with Voice Technology
+              </Text>
 
-      <div className={classes.inner}>
-        <Title className={classes.title}>
-          Automated AI code reviews for{' '}
-          <Text component="span" inherit className={classes.highlight}>
-            any stack
-          </Text>
-        </Title>
+              <List
+                mt={30}
+                spacing="sm"
+                size="sm"
+                icon={
+                  <ThemeIcon size={20} radius="xl">
+                    <IconCheck
+                      style={{ width: rem(12), height: rem(12) }}
+                      stroke={1.5}
+                    />
+                  </ThemeIcon>
+                }
+              >
+                {/* <List.Item>
+                  <b>Voice-Based Navigation</b> – build type safe applications, all
+                  components and hooks export types
+                </List.Item> */}
+                <List.Item>
+                  <b>Voice-Based Navigation</b>
+                </List.Item>
+                <List.Item>
+                  <b>Personalized Website Tours</b>
+                </List.Item>
+                <List.Item>
+                  <b>Plugin Customization</b>
+                </List.Item>
+                <List.Item>
+                  <b>Intuitive User Experience</b>
+                </List.Item>
+                <List.Item>
+                  <b>Continuous Improvement</b>
+                </List.Item>
+              </List>
 
-        <Container size={640}>
-          <Text size="lg" className={classes.description}>
-            Build more reliable software with AI companion. AI is also trained to detect lazy
-            developers who do nothing and just complain on Twitter.
-          </Text>
+              <Group mt={30}>
+                <Button radius="xl" size="md" className={classes.control}>
+                  Get started
+                </Button>
+                <Button
+                  variant="default"
+                  radius="xl"
+                  size="md"
+                  className={classes.control}
+                >
+                  Source code
+                </Button>
+              </Group>
+            </div>
+            <Image src="https://png.pngtree.com/background/20230503/original/pngtree-smart-robot-with-cute-face-colorful-plants-picture-image_2500123.jpg" className={classes.image} />
+          </div>
         </Container>
+      </section>
 
-        <div className={classes.controls}>
-          <Button className={classes.control} variant="white" size="lg">
-            Get started
-          </Button>
-          <Button className={cx(classes.control, classes.secondaryControl)} size="lg">
-            Live demo
-          </Button>
-        </div>
-      </div>
-    </div>
+        <FeaturesCards/>
 
-  );
+      <Faqsection/>
+
+    </>
+  )
 }
+
+export default page

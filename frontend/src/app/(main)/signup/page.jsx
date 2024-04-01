@@ -68,6 +68,7 @@ function getStrength(password) {
 
 
 export function SignUp(props) {
+  const router = useRouter();
   const [popoverOpened, setPopoverOpened] = useState(false)
   const [value, setValue] = useState("")
   const checks = requirements.map((requirement, index) => (
@@ -125,6 +126,9 @@ export function SignUp(props) {
         console.log(err);
         toast.error('Some Error Occured');
       });
+
+
+
   }
 
 
@@ -190,7 +194,6 @@ export function SignUp(props) {
                     {checks}
                   </Popover.Dropdown>
                 </Popover>
-
                 <PasswordInput
                   mt="sm"
                   label="Confirm password"
@@ -199,12 +202,12 @@ export function SignUp(props) {
                 />
 
 
+
                 <Group justify="space-between" mt="lg">
                   <Checkbox label="I accept the Terms of Use & Privacy Policy"
                     checked={form.values.terms}
                     {...form.getInputProps('termsOfService', { type: 'checkbox' })}
                   />
-
                 </Group>
                 <Group justify="space-between" mt="xl">
                   <Anchor component={Link} underline="hover" type="button" c="dimmed" href="/login" size="xs">
