@@ -1,19 +1,20 @@
  .Paper {
-    background: rgba( 255, 255, 255, 0.85 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 20px );
-  -webkit-backdrop-filter: blur( 20px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-    color: black;
+  background: rgba( 255, 255, 255, 0 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 0px );
+-webkit-backdrop-filter: blur( 0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: white;
     
   }
   .title {
     font-family:
       Greycliff CF,
       var(--mantine-font-family);
-    font-weight: 1000;
+    font-weight: 900;
     text-align: center;
+    font-size: 45px;
   }
   .text{
     text-align: center;

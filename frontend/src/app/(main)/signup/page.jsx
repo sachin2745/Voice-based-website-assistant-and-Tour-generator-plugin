@@ -136,26 +136,15 @@ export function SignUp(props) {
 
     <Box mx="auto" >
       <BackgroundImage
-        src="https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg"
+        src="https://t3.ftcdn.net/jpg/03/95/59/24/360_F_395592429_fImkRDB7B0lLhniD7LU2ZHkBeDsWX8E2.jpg"
         radius="md"
 
       >
         <Center p="md">
-          <Container mt={10} w={800} fluid>
+          <Container  w={800} fluid me={10}>
             <Paper withBorder shadow="md" mt={30} {...props} radius="md" p="xl" className={classes.Paper}>
               <Title className={classes.title} >
-                Welcome to VoiceTour Navigator</Title>
-              <Text className={classes.text}>SignUp with</Text>
-
-              <Group grow mb="md" mt="md">
-                <GoogleButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Google</GoogleButton>
-                <TwitterButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Facebook</TwitterButton>
-              </Group>
-
-              <Divider label={
-                <p style={{ color: 'blue' }}>Or continue with email</p>
-              }
-                labelPosition="center" my="lg" />
+              SignUp</Title>
 
               <form onSubmit={form.onSubmit(signupSubmit)}>
 
@@ -213,11 +202,19 @@ export function SignUp(props) {
                   <Anchor component={Link} underline="hover" type="button" c="dimmed" href="/login" size="xs">
                     Already have an account? Login here
                   </Anchor>
-                  <Button type="submit" variant="outline" color="rgba(0, 0, 0, 1)"
+                  <Button type="submit" variant="outline" color="rgba(255, 255, 255, 1)"
                   >
                     Sign Up
                   </Button>
                 </Group>
+                <Divider label={
+                <p style={{ color: 'grey' }}>Or Signup with</p>
+              }
+                labelPosition="center" my="lg" />
+                <Group grow mb="md" mt="md">
+                <GoogleButton radius="xl" variant="outline" color="rgba(255, 255, 255, 1)">Google</GoogleButton>
+                <TwitterButton radius="xl" variant="outline" color="rgba(255, 255, 255, 1)">Facebook</TwitterButton>
+              </Group>
               </form>
             </Paper>
           </Container>

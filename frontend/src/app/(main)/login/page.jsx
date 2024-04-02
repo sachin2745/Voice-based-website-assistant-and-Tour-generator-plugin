@@ -55,58 +55,60 @@ export function Login() {
 
   return (
     <MantineProvider theme={theme} >
-      <Box mx="auto" bg="white" > 
+      <Box mx="auto" >
+        <BackgroundImage src='https://img.freepik.com/premium-vector/elegant-navy-blue-gold-background-with-overlap-layer-suit-business-corporate-institution-party-festive-seminar-talks_181182-23866.jpg'
+          radius="md">
 
-        <Center p="md">
-          <Container size="responsive" mt={20}  w={700} >
-            <Paper withBorder shadow="md" p={30} mt={30} mb={30} radius="md" withBorder className={classes.Paper}>
-              <Title className={classes.title} >
-                Welcome to VoiceTour Navigator</Title>
-              <Text className={classes.text}>Login with</Text>
+          <Center p="md">
+            <Container size="responsive" mt={20} w={700} ms={100}>
+              <Paper withBorder shadow="md" p={30} mt={30} mb={30} radius="md" withBorder className={classes.Paper}>
+                <Title className={classes.title} >
+                  Welcome to VoiceTour Navigator</Title>
+                <Text className={classes.text}>Login with</Text>
 
-              <Group grow mb="md" mt="md">
-                <GoogleButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Google</GoogleButton>
-                <TwitterButton radius="xl" variant="outline" color="rgba(0, 0, 0, 1)">Facebook</TwitterButton>
-              </Group>
-
-              <Divider label={
-                <p style={{ color: 'blue' }}>Or continue with email</p>
-              } labelPosition="center" my="lg" />
-
-              <form onSubmit={form.onSubmit((values) => console.log(values))}>
-
-                <TextInput withAsterisk label="Email" placeholder="your@email.com"
-                  {...form.getInputProps('email')} required />
-                <PasswordInput label="Password"
-                  placeholder="Your password"
-                  value={form.values.password}
-                  onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
-                  error={form.errors.password && 'Password should include at least 8 characters'}
-                  required mt="md" />
-
-                <Group justify="space-between" mt="lg">
-                  <Checkbox label="Remember me"
-                    checked={form.values.terms}
-                    onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
-                  />
-                  <Anchor component="button" size="sm">
-                    Forgot password?
-                  </Anchor>
+                <Group grow mb="md" mt="md">
+                  <GoogleButton radius="xl" variant="outline" color="rgba(255, 255, 255, 1)">Google</GoogleButton>
+                  <TwitterButton radius="xl" variant="outline" color="rgba(255, 255, 255, 1)">Facebook</TwitterButton>
                 </Group>
-                <Group justify="space-between" mt="xl">
-                  <Anchor component={Link} underline="hover" type="button" c="dimmed" href="/signup" size="xs">
-                    Don't have an account? Register
-                  </Anchor>
-                  <Button type="submit" variant="outline" color="rgba(0, 0, 0, 1)"
-                  >
-                    Login
-                  </Button>
-                </Group>
-              </form>
-            </Paper>
-          </Container>
-        </Center>
 
+                <Divider label={
+                  <p style={{ color: 'grey' }}>Or continue with email</p>
+                } labelPosition="center" my="lg"  color='white'/>
+
+                <form onSubmit={form.onSubmit((values) => console.log(values))}>
+
+                  <TextInput withAsterisk label="Email" placeholder="your@email.com"
+                    {...form.getInputProps('email')} required />
+                  <PasswordInput label="Password"
+                    placeholder="Your password"
+                    value={form.values.password}
+                    onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
+                    error={form.errors.password && 'Password should include at least 8 characters'}
+                    required mt="md" />
+
+                  <Group justify="space-between" mt="lg">
+                    <Checkbox label="Remember me"
+                      checked={form.values.terms}
+                      onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
+                    />
+                    <Anchor component={Link} href="/resetPassword"  size="sm">
+                      Forgot password?
+                    </Anchor>
+                  </Group>
+                  <Group justify="space-between" mt="xl">
+                    <Anchor component={Link} underline="hover"  c="dimmed" href="/signup" size="xs">
+                      Don't have an account? Register
+                    </Anchor>
+                    <Button type="submit" variant="outline" color="rgba(255, 255, 255, 1)"
+                    >
+                      Login
+                    </Button>
+                  </Group>
+                </form>
+              </Paper>
+            </Container>
+          </Center>
+        </BackgroundImage>
       </Box>
     </MantineProvider>
   )
