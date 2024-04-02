@@ -56,24 +56,25 @@ export function Login() {
   return (
     <MantineProvider theme={theme} >
       <Box mx="auto" >
-        <BackgroundImage src='https://img.freepik.com/premium-vector/elegant-navy-blue-gold-background-with-overlap-layer-suit-business-corporate-institution-party-festive-seminar-talks_181182-23866.jpg'
+        <BackgroundImage src=''
           radius="md">
+          
 
           <Center p="md">
-            <Container size="responsive" mt={20} w={700} ms={100}>
+            <Container size="responsive" mt={20} w={700} >
               <Paper withBorder shadow="md" p={30} mt={30} mb={30} radius="md" withBorder className={classes.Paper}>
                 <Title className={classes.title} >
                   Welcome to VoiceTour Navigator</Title>
                 <Text className={classes.text}>Login with</Text>
 
-                <Group grow mb="md" mt="md">
-                  <GoogleButton radius="xl" variant="outline" color="rgba(255, 255, 255, 1)">Google</GoogleButton>
-                  <TwitterButton radius="xl" variant="outline" color="rgba(255, 255, 255, 1)">Facebook</TwitterButton>
+                <Group grow mb="md" mt="md" >
+                  <GoogleButton radius="xl" variant="outline"  className={classes.Button}>Google</GoogleButton>
+                  <TwitterButton radius="xl" variant="outline"  className={classes.Button}>Facebook</TwitterButton>
                 </Group>
 
                 <Divider label={
                   <p style={{ color: 'grey' }}>Or continue with email</p>
-                } labelPosition="center" my="lg"  color='white'/>
+                } labelPosition="center" my="lg" color='white' />
 
                 <form onSubmit={form.onSubmit((values) => console.log(values))}>
 
@@ -91,23 +92,26 @@ export function Login() {
                       checked={form.values.terms}
                       onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
                     />
-                    <Anchor component={Link} href="/resetPassword"  size="sm">
+                    <Anchor component={Link} href="/resetPassword" size="sm">
                       Forgot password?
                     </Anchor>
                   </Group>
                   <Group justify="space-between" mt="xl">
-                    <Anchor component={Link} underline="hover"  c="dimmed" href="/signup" size="xs">
+                    <Anchor component={Link} underline="hover" c="dimmed" href="/signup" size="xs">
                       Don't have an account? Register
                     </Anchor>
-                    <Button type="submit" variant="outline" color="rgba(255, 255, 255, 1)"
+                    <Button type="submit" variant="outline" className={classes.Button}
                     >
                       Login
                     </Button>
                   </Group>
                 </form>
               </Paper>
+              <img src="loginimg.svg" alt="" className={classes.image} />
             </Container>
+            
           </Center>
+          
         </BackgroundImage>
       </Box>
     </MantineProvider>
