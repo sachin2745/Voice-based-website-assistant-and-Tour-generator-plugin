@@ -140,7 +140,7 @@ export function SignUp(props) {
         radius="md"
 
       >
-        <Center p="md">
+        <Center >
           <Container  w={800} fluid me={10}>
             <Paper withBorder shadow="md" mt={30} {...props} radius="md" p="xl" className={classes.Paper}>
               <Title className={classes.title} >
