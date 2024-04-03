@@ -40,7 +40,7 @@ const page = () => {
                 <List className={classes.List} size="md" mt="xl" spacing="sm"
 
                   icon={
-                    <ThemeIcon size={20} radius="xl" style={"background-image: linear-gradient(to right, red , yellow)"}>
+                    <ThemeIcon size={20} radius="xl" style={{backgroundImage: 'linear-gradient(to right, #01fffb, #4cbbff)'}}>
                       <IconCheck
                         style={{ width: rem(12), height: rem(12) }}
                         stroke={5}
