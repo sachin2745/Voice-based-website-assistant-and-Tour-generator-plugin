@@ -62,14 +62,14 @@ export function Login() {
 
           <Center p="md">
             <Container size="responsive" mt={20} w={700} >
-              <Paper withBorder shadow="md" p={30} mt={30} mb={30} radius="md" withBorder className={classes.Paper}>
+              <Paper withBorder shadow="md" p={30} mt={30} mb={30} radius="md"  className={classes.Paper}>
                 <Title className={classes.title} >
                   Welcome to VoiceTour Navigator</Title>
                 <Text className={classes.text}>Login with</Text>
 
                 <Group grow mb="md" mt="md" >
-                  <GoogleButton radius="xl" variant="outline"  className={classes.Button}>Google</GoogleButton>
-                  <TwitterButton radius="xl" variant="outline"  className={classes.Button}>Facebook</TwitterButton>
+                  <GoogleButton radius="xl"  className={classes.Button}>Google</GoogleButton>
+                  <TwitterButton radius="xl"   className={classes.Button}>Facebook</TwitterButton>
                 </Group>
 
                 <Divider label={
@@ -100,14 +100,15 @@ export function Login() {
                     <Anchor component={Link} underline="hover" c="dimmed" href="/signup" size="xs">
                       Don't have an account? Register
                     </Anchor>
-                    <Button type="submit" variant="outline" className={classes.Button}
+                    <Button type="submit"  className={classes.Button}
                     >
                       Login
                     </Button>
+                    
                   </Group>
                 </form>
               </Paper>
-              <img src="loginimg.svg" alt="" className={classes.image} />
+              
             </Container>
             
           </Center>
