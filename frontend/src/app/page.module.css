@@ -3,7 +3,7 @@
   justify-content: space-between;
   padding-top: calc(var(--mantine-spacing-xl) * 2);
   padding-bottom: calc(var(--mantine-spacing-xl) * 3);
-  
+
 }
 
 .content {
@@ -24,18 +24,20 @@
   font-size: rem(48px);
   line-height: 1.2;
   font-weight: 900;
+ 
 
   @media (max-width: $mantine-breakpoint-xs) {
     font-size: rem(30px);
   }
 }
-.subtitle{
+
+.subtitle {
 
   background: -webkit-linear-gradient(#01fffb, #4cbbff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
 
+}
 
 .controls {
   margin-top: calc(var(--mantine-spacing-md) * 2);
@@ -49,7 +51,7 @@
   height: rem(50px);
   padding-left: rem(38px);
   padding-right: rem(38px);
-  background-image: linear-gradient(to right, #01fffb ,#4cbbff);
+  background-image: linear-gradient(to right, #01fffb, #4cbbff);
 
   @media (max-width: $mantine-breakpoint-sm) {
     height: rem(54px);
@@ -58,10 +60,12 @@
     flex: 1;
   }
 }
+
 .image {
-  width: rem(376px);
-  height: rem(356px);
+  width: rem(476px);
+  height: rem(456px);
   margin-top: 90px;
+  
 
   @media (max-width: $mantine-breakpoint-md) {
     display: none;
@@ -71,25 +75,28 @@
 .highlight {
   position: relative;
   font-weight: 100;
-  
-  
+
+
 }
-.box{
+
+.box {
   background: linear-gradient(45deg, #2196F3 0%, #010c14 100%);
   background-size: 200% 200%;
   height: 100%;
   width: 100%;
   -webkit-animation: background 6s ease infinite;
-          animation: background 6s ease infinite;
+  animation: background 6s ease infinite;
 }
 
 @-webkit-keyframes background {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -99,9 +106,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }

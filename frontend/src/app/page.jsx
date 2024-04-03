@@ -94,7 +94,7 @@ const page = () => {
 
               </div>
               <Image src="micimg.png" className={classes.image} />
-
+                
             </div>
           </Container>
 
