@@ -32,15 +32,15 @@ const page = () => {
           <Container  >
             <div className={classes.inner}>
               <div className={classes.content}>
-                <Title className={classes.title}><span className={classes.highlight}>Welcome to</span> <br /><span className={classes.subtitle}>VoiceTour Navigator </span><br />Plugin System</Title>
-                <Text c="dimmed" mt="md">
+                <Title className={classes.title}><span className={classes.highlight}>Welcome to</span> <br /><span className={classes.subtitle}>VoiceTourNavigator </span><br />Plugin System</Title>
+                <Text mt="md">
                   Revolutionizing Website Navigation with Voice Technology
                 </Text>
 
-                <List className={classes.List} size="xl" mt="xl" spacing="sm"
-                  size="sm"
+                <List className={classes.List} size="md" mt="xl" spacing="sm"
+
                   icon={
-                    <ThemeIcon size={20} radius="xl" color='#ffcc00'>
+                    <ThemeIcon size={20} radius="xl" style={"background-image: linear-gradient(to right, red , yellow)"}>
                       <IconCheck
                         style={{ width: rem(12), height: rem(12) }}
                         stroke={5}
@@ -75,7 +75,7 @@ const page = () => {
                   <Button
                     size="sm"
                     className={classes.control}
-                    variant="filled" color="#FFCC00"
+                    variant="filled"
                   >
                     Get started
                   </Button>
@@ -94,6 +94,7 @@ const page = () => {
 
               </div>
               <Image src="micimg.png" className={classes.image} />
+
             </div>
           </Container>
 
