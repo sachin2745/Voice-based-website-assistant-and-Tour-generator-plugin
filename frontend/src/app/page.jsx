@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Image,
   Container,
@@ -23,9 +23,16 @@ import cx from 'clsx';
 import { GithubIcon } from '@mantinex/dev-icons'
 import Footer from './(main)/footer'
 import Navbar from './(main)/navbar'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 
 const page = () => {
+useEffect(() => {
+  AOS.init({duration:2000});
+}, []);
+
+
   return (
     <>
 
@@ -37,8 +44,8 @@ const page = () => {
 
           <Container  >
             <div className={classes.inner}>
-              <div className={classes.content}>
-                <Title className={classes.title}>
+              <div className={classes.content} data-aos="fade-up">
+                <Title className={classes.title} >
                   <span className={classes.highlight}>Welcome to</span> <br />
                   <span className={classes.subtitle}>VoiceTourNavigator </span>
                   <br />Plugin System</Title>
@@ -102,7 +109,7 @@ const page = () => {
                 </Group>
 
               </div>
-              <Image src="micimg.png" className={classes.image} />
+              <Image src="micimg.png" className={classes.image} data-aos="fade-up" />
 
             </div>
           </Container>
