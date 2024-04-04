@@ -63,13 +63,14 @@ export default function FeaturesCards() {
     return (
         <Container size="lg" py="xl">
             <Group justify="center">
-                <Badge variant="filled" size="lg">
+                <Badge  variant="gradient"
+      gradient={{ from: '#01fffb', to: '#4cbbff', deg: 90 }} size="xl"  radius="md" >
                     Best Navigator Plugin ever
                 </Badge>
             </Group>
 
             <Title order={2} className={classes.title} ta="center" mt="sm">
-            Explore Our Innovative Key Features
+            Explore Our <span className={classes.highlight}> Innovative</span> Key Features
             </Title>
 
             <Text c="dimmed" className={classes.description} ta="center" mt="md">

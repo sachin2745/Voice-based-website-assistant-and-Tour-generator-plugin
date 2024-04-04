@@ -100,7 +100,7 @@ export function Login() {
                     <Anchor component={Link} underline="hover" c="dimmed" href="/signup" size="xs">
                       Don't have an account? Register
                     </Anchor>
-                    <Button type="submit"  className={classes.Button}
+                    <Button type="submit" size='lg' className={classes.Button}
                     >
                       Login
                     </Button>

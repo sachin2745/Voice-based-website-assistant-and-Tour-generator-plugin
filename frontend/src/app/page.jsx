@@ -31,14 +31,17 @@ const page = () => {
 
       <Navbar />
 
-      
+
       <section  >
         <Box mx="auto" className={classes.box}>
 
           <Container  >
             <div className={classes.inner}>
               <div className={classes.content}>
-                <Title className={classes.title}><span className={classes.highlight}>Welcome to</span> <br /><span className={classes.subtitle}>VoiceTourNavigator </span><br />Plugin System</Title>
+                <Title className={classes.title}>
+                  <span className={classes.highlight}>Welcome to</span> <br />
+                  <span className={classes.subtitle}>VoiceTourNavigator </span>
+                  <br />Plugin System</Title>
                 <Text mt="md">
                   Revolutionizing Website Navigation with Voice Technology
                 </Text>

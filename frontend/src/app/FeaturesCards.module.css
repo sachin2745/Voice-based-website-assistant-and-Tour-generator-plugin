@@ -6,6 +6,12 @@
       font-size: rem(24px);
     }
   }
+
+  .highlight{
+    background: -webkit-linear-gradient(#01fffb, #4cbbff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
   
   .description {
     max-width: rem(600px);
