@@ -2,8 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppShellFooter, MantineProvider, createTheme } from "@mantine/core";
 import '@mantine/core/styles.css';
-import Navbar from "./(main)/navbar";
-import { Footer } from "./(main)/footer";
+
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,9 +23,9 @@ export default function RootLayout({ children }) {
 
       <body className={inter.className}>
         <MantineProvider theme={theme} defaultColorScheme="dark">
-          <Navbar />
+         
          {children}
-         <Footer/>
+         
           
         </MantineProvider>
       </body>

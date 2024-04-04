@@ -21,11 +21,17 @@ import FeaturesCards from './FeaturesCards'
 import Faqsection from './faqSection'
 import cx from 'clsx';
 import { GithubIcon } from '@mantinex/dev-icons'
+import Footer from './(main)/footer'
+import Navbar from './(main)/navbar'
 
 
 const page = () => {
   return (
     <>
+
+      <Navbar />
+
+      
       <section  >
         <Box mx="auto" className={classes.box}>
 
@@ -40,7 +46,7 @@ const page = () => {
                 <List className={classes.List} size="md" mt="xl" spacing="sm"
 
                   icon={
-                    <ThemeIcon size={20} radius="xl" style={{backgroundImage: 'linear-gradient(to right, #01fffb, #4cbbff)'}}>
+                    <ThemeIcon size={20} radius="xl" style={{ backgroundImage: 'linear-gradient(to right, #01fffb, #4cbbff)' }}>
                       <IconCheck
                         style={{ width: rem(12), height: rem(12) }}
                         stroke={5}
@@ -94,7 +100,7 @@ const page = () => {
 
               </div>
               <Image src="micimg.png" className={classes.image} />
-                
+
             </div>
           </Container>
 
@@ -105,6 +111,8 @@ const page = () => {
 
       <Faqsection />
 
+
+      <Footer />
     </>
   )
 }
