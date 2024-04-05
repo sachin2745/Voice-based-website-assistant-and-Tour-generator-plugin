@@ -189,7 +189,7 @@ function Navbar() {
               mt='md'
             />
             {/* <Button component={Link} variant="default" href='/login'>Log in</Button> */}
-            <Button component={Link} variant='filled'  color='darkblue' href='/signup'>
+            <Button component={Link} variant='filled'  color='#4cbbff' href='/signup'>
               <Lottie animationData={avatar} className={classes.avi}/>
                SignUp </Button>
 
