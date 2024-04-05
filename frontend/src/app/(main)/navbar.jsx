@@ -21,7 +21,7 @@ import {
   Title,
   TextInput,
   Code,
-  Avatar,
+  Image,
 } from '@mantine/core';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { useDisclosure } from '@mantine/hooks';
@@ -40,6 +40,8 @@ import Link from 'next/link';
 import cx from 'clsx';
 import { ActionIcon, useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
 import { IconSun, IconMoon } from '@tabler/icons-react';
+import Lottie from 'lottie-react';
+import avatar from './avatar.json'
 
 const mockdata = [
   {
@@ -187,7 +189,9 @@ function Navbar() {
               mt='md'
             />
             {/* <Button component={Link} variant="default" href='/login'>Log in</Button> */}
-            <Button component={Link} href='/signup'><Avatar src="micimg.png" alt="it's me" />Sign up</Button>
+            <Button component={Link} variant='filled'  color='darkblue' href='/signup'>
+              <Lottie animationData={avatar} className={classes.avi}/>
+               SignUp </Button>
 
             <ActionIcon
               onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}

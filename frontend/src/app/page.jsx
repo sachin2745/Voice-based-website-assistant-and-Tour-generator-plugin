@@ -25,6 +25,8 @@ import Footer from './(main)/footer'
 import Navbar from './(main)/navbar'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import Lottie from 'lottie-react'
+import mainimg from './mainimg.json'
 
 
 const page = () => {
@@ -53,14 +55,14 @@ useEffect(() => {
                   Revolutionizing Website Navigation with Voice Technology
                 </Text>
 
-                <List className={classes.List} size="md" mt="xl" spacing="sm"
+                <List className={classes.List} size="md" mt="xl" spacing="sm" 
 
                   icon={
                     <ThemeIcon size={20} radius="xl" style={{ backgroundImage: 'linear-gradient(to right, #01fffb, #4cbbff)' }}>
                       <IconCheck
                         style={{ width: rem(12), height: rem(12) }}
                         stroke={5}
-
+                    color='black'
                       />
                     </ThemeIcon>
                   }
@@ -89,18 +91,19 @@ useEffect(() => {
 
                 <Group className={classes.controls}>
                   <Button
+                  variant='outline'
                     size="sm"
                     className={classes.control}
-                    variant="filled"
+                    color="rgba(0, 0, 0, 1)"
                   >
                     Get started
                   </Button>
 
                   <Button
                     component="a"
+                    variant='outline'
                     href="https://github.com/mantinedev/mantine"
-                    size="sm"
-                    variant="default"
+                    color="rgba(0, 0, 0, 1)"
                     className={classes.control}
                     leftSection={<GithubIcon size={20} />}
                   >
@@ -109,8 +112,8 @@ useEffect(() => {
                 </Group>
 
               </div>
-              <Image src="micimg.png" className={classes.image} data-aos="fade-up" />
-
+              
+              <Lottie loop={true} animationData={mainimg} size='xl' className={classes.image} data-aos="fade-up"  />
             </div>
           </Container>
 
