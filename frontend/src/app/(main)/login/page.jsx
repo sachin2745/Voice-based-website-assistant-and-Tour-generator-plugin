@@ -90,6 +90,7 @@ export function Login() {
 
                         <TextInput withAsterisk label="Email" placeholder="your@email.com"
                           {...form.getInputProps('email')} required />
+
                         <PasswordInput label="Password"
                           placeholder="Your password"
                           value={form.values.password}
@@ -110,11 +111,9 @@ export function Login() {
                           <Anchor component={Link} underline="hover" c="dimmed" href="/signup" size="xs">
                             Don't have an account? Register
                           </Anchor>
-                          <Button type="submit" size='lg' className={classes.Button}
-                          >
-                            Login
+                          <Button type="submit" className={classes.button}>
+                            <p className={classes.text}>Login</p>
                           </Button>
-
                         </Group>
                       </form>
                     </Paper>
