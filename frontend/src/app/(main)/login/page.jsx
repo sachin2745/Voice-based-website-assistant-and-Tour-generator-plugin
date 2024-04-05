@@ -74,7 +74,7 @@ export function Login() {
                   <Container size="responsive" w={700} >
                     <Paper withBorder shadow="md" p={30} mt={10} mb={30} radius="md" className={classes.Paper}>
                       <Title className={classes.title} >
-                        Welcome to VoiceTour Navigator</Title>
+                        Welcome to <span className={classes.subtitle}>VoiceTour</span> Navigator</Title>
                       <Text className={classes.text}>Login with</Text>
 
                       <Group grow mb="md" mt="md" >
@@ -88,10 +88,11 @@ export function Login() {
 
                       <form onSubmit={form.onSubmit((values) => console.log(values))}>
 
-                        <TextInput withAsterisk label="Email" placeholder="your@email.com"
+                        <TextInput withAsterisk variant="filled" label="Email" placeholder="your@email.com"
                           {...form.getInputProps('email')} required />
 
                         <PasswordInput label="Password"
+                        variant="filled"
                           placeholder="Your password"
                           value={form.values.password}
                           onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
@@ -112,7 +113,7 @@ export function Login() {
                             Don't have an account? Register
                           </Anchor>
                           <Button type="submit" className={classes.button}>
-                            <p className={classes.text}>Login</p>
+                            <p className={classes.p}>Login</p>
                           </Button>
                         </Group>
                       </form>

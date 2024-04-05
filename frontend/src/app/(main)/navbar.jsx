@@ -21,6 +21,7 @@ import {
   Title,
   TextInput,
   Code,
+  Avatar,
 } from '@mantine/core';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { useDisclosure } from '@mantine/hooks';
@@ -186,7 +187,8 @@ function Navbar() {
               mt='md'
             />
             {/* <Button component={Link} variant="default" href='/login'>Log in</Button> */}
-            <Button component={Link} href='/signup'>Sign up</Button>
+            <Button component={Link} href='/signup'><Avatar src="micimg.png" alt="it's me" />Sign up</Button>
+
             <ActionIcon
               onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}
               variant="default"
