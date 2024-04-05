@@ -1,55 +1,69 @@
 .responsiveContainer {
-  max-width: rem(300px);
+	max-width: rem(300px);
 
-  @media (min-width: em(400px)) {
-    max-width: rem(400px);
-  }
+	@media (min-width: em(400px)) {
+		max-width: rem(400px);
+	}
 
-  @media (min-width: em(600px)) {
-    max-width: rem(600px);
-  }
+	@media (min-width: em(600px)) {
+		max-width: rem(600px);
+	}
 
 }
 
+.body {
+	padding-right: calc(var(--mantine-spacing-xl) * 4);
+
+	@media (max-width: $mantine-breakpoint-sm) {
+		padding-right: 0;
+		margin-top: var(--mantine-spacing-xl);
+	}
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	padding: calc(var(--mantine-spacing-xl) * 2);
+	border-radius: var(--mantine-radius-md);
+	background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-8));
+	border: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-8));
+
+	@media (max-width: $mantine-breakpoint-sm) {
+		flex-direction: column-reverse;
+		padding: var(--mantine-spacing-xl);
+	}
+}
 .Paper {
-  background: rgba( 255, 255, 255, 0 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 30px );
--webkit-backdrop-filter: blur( 0px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+	background: rgba(255, 255, 255, 0);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(30px);
+	-webkit-backdrop-filter: blur(0px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 
 
 }
 
 .title {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-  font-family:
-    Greycliff CF,
-    var(--mantine-font-family);
-  font-weight: 1000;
-  text-align: center;
-  font-size: 30px;
+	color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+	font-family:
+		Greycliff CF,
+		var(--mantine-font-family);
+	font-weight: 1000;
+	text-align: center;
+	font-size: 30px;
 }
 
 .text {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-  text-align: center;
-  margin-top: 10px;
-  font-size: 15px;
+	color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+	text-align: center;
+	margin-top: 10px;
+	font-size: 15px;
 }
-.image {
-  width: rem(376px);
-  height: rem(356px);
- margin-left: 500px;
- margin-top: -400px;
- filter: drop-shadow(3px 2px 3px gold);
 
-  @media (max-width: $mantine-breakpoint-md) {
-    display: none;
-  }
-}
+
+
 .Button {
 	position: relative;
 	width: 50%;
@@ -67,23 +81,23 @@ color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 	-webkit-transition: all 0.2s ease-in;
 	-moz-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
-  }
-  
-  .Button:hover {
+}
+
+.Button:hover {
 	background: rgb(61, 106, 255);
 	box-shadow: 0 0 10px 5px rgba(0, 142, 236, 0.815);
 	-webkit-transition: all 0.2s ease-out;
 	-moz-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
-  }
-  
-  .Button:hover::before {
+}
+
+.Button:hover::before {
 	-webkit-animation: sh02 0.5s 0s linear;
 	-moz-animation: sh02 0.5s 0s linear;
 	animation: sh02 0.5s 0s linear;
-  }
-  
-  .Button::before {
+}
+
+.Button::before {
 	content: '';
 	display: block;
 	width: 0px;
@@ -99,27 +113,38 @@ color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 	-ms-transform: skewX(-20deg);
 	-o-transform: skewX(-20deg);
 	transform: skewX(-20deg);
-  }
-  
-  @keyframes sh02 {
+}
+
+@keyframes sh02 {
 	from {
-	  opacity: 0;
-	  left: 0%;
+		opacity: 0;
+		left: 0%;
 	}
-  
+
 	50% {
-	  opacity: 1;
+		opacity: 1;
 	}
-  
+
 	to {
-	  opacity: 0;
-	  left: 100%;
+		opacity: 0;
+		left: 100%;
 	}
-  }
-  
-  .Button:active {
+}
+
+.Button:active {
 	box-shadow: 0 0 0 0 transparent;
 	-webkit-transition: box-shadow 0.2s ease-in;
 	-moz-transition: box-shadow 0.2s ease-in;
 	transition: box-shadow 0.2s ease-in;
-  }
+}
+
+.image {
+	max-width: 50%;
+
+	@media (max-width: $mantine-breakpoint-xs) {
+		max-width: 100%;
+	}
+	@media (max-width: $mantine-breakpoint-sm) {
+		max-width: 100%;
+	}
+}

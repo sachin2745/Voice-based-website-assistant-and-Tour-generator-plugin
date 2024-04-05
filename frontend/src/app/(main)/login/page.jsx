@@ -13,7 +13,8 @@ import {
   Checkbox,
   Anchor,
   Stack,
-  Title
+  Title,
+  Image
 } from "@mantine/core"
 import { GoogleButton } from "./GoogleButton"
 import { TwitterButton } from "./TwitterButton"
@@ -22,6 +23,10 @@ import cx from 'clsx';
 import { MantineProvider, Container, createTheme } from '@mantine/core';
 import Link from 'next/link';
 import { BackgroundImage, Center, Box } from '@mantine/core';
+import Navbar from '../navbar';
+import logimg from './logimg.json';
+import Lottie from 'lottie-react';
+
 
 
 const theme = createTheme({
@@ -54,68 +59,78 @@ export function Login() {
 
 
   return (
-    <MantineProvider theme={theme} >
-      <Box mx="auto" >
-        <BackgroundImage src=''
-          radius="md">
-          
+    <>
+      <Navbar />
 
-          <Center p="md">
-            <Container size="responsive" mt={20} w={700} >
-              <Paper withBorder shadow="md" p={30} mt={30} mb={30} radius="md"  className={classes.Paper}>
-                <Title className={classes.title} >
-                  Welcome to VoiceTour Navigator</Title>
-                <Text className={classes.text}>Login with</Text>
+      <div className={classes.wrapper}>
+        <div className={classes.body}>
+          <MantineProvider theme={theme} >
+            <Box mx="auto" >
+              <BackgroundImage src=''
+                radius="md">
 
-                <Group grow mb="md" mt="md" >
-                  <GoogleButton radius="xl"  className={classes.Button}>Google</GoogleButton>
-                  <TwitterButton radius="xl"   className={classes.Button}>Facebook</TwitterButton>
-                </Group>
 
-                <Divider label={
-                  <p style={{ color: 'grey' }}>Or continue with email</p>
-                } labelPosition="center" my="lg" color='white' />
+                <Center p="md">
+                  <Container size="responsive" w={700} >
+                    <Paper withBorder shadow="md" p={30} mt={10} mb={30} radius="md" className={classes.Paper}>
+                      <Title className={classes.title} >
+                        Welcome to VoiceTour Navigator</Title>
+                      <Text className={classes.text}>Login with</Text>
 
-                <form onSubmit={form.onSubmit((values) => console.log(values))}>
+                      <Group grow mb="md" mt="md" >
+                        <GoogleButton radius="xl" className={classes.Button}>Google</GoogleButton>
+                        <TwitterButton radius="xl" className={classes.Button}>Facebook</TwitterButton>
+                      </Group>
 
-                  <TextInput withAsterisk label="Email" placeholder="your@email.com"
-                    {...form.getInputProps('email')} required />
-                  <PasswordInput label="Password"
-                    placeholder="Your password"
-                    value={form.values.password}
-                    onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
-                    error={form.errors.password && 'Password should include at least 8 characters'}
-                    required mt="md" />
+                      <Divider label={
+                        <p style={{ color: 'grey' }}>Or continue with email</p>
+                      } labelPosition="center" my="lg" color='white' />
 
-                  <Group justify="space-between" mt="lg">
-                    <Checkbox label="Remember me"
-                      checked={form.values.terms}
-                      onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
-                    />
-                    <Anchor component={Link} href="/resetPassword" size="sm">
-                      Forgot password?
-                    </Anchor>
-                  </Group>
-                  <Group justify="space-between" mt="xl">
-                    <Anchor component={Link} underline="hover" c="dimmed" href="/signup" size="xs">
-                      Don't have an account? Register
-                    </Anchor>
-                    <Button type="submit" size='lg' className={classes.Button}
-                    >
-                      Login
-                    </Button>
-                    
-                  </Group>
-                </form>
-              </Paper>
-              
-            </Container>
-            
-          </Center>
-          
-        </BackgroundImage>
-      </Box>
-    </MantineProvider>
+                      <form onSubmit={form.onSubmit((values) => console.log(values))}>
+
+                        <TextInput withAsterisk label="Email" placeholder="your@email.com"
+                          {...form.getInputProps('email')} required />
+                        <PasswordInput label="Password"
+                          placeholder="Your password"
+                          value={form.values.password}
+                          onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
+                          error={form.errors.password && 'Password should include at least 8 characters'}
+                          required mt="md" />
+
+                        <Group justify="space-between" mt="lg">
+                          <Checkbox label="Remember me"
+                            checked={form.values.terms}
+                            onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
+                          />
+                          <Anchor component={Link} href="/resetPassword" size="sm">
+                            Forgot password?
+                          </Anchor>
+                        </Group>
+                        <Group justify="space-between" mt="xl">
+                          <Anchor component={Link} underline="hover" c="dimmed" href="/signup" size="xs">
+                            Don't have an account? Register
+                          </Anchor>
+                          <Button type="submit" size='lg' className={classes.Button}
+                          >
+                            Login
+                          </Button>
+
+                        </Group>
+                      </form>
+                    </Paper>
+
+                  </Container>
+
+                </Center>
+
+              </BackgroundImage>
+            </Box>
+          </MantineProvider>
+        </div>
+        <Lottie loop={true} animationData={logimg} className={classes.image} />
+
+      </div>
+    </>
   )
 }
 
