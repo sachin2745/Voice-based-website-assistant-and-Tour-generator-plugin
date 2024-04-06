@@ -13,7 +13,8 @@ import {
   Checkbox,
   Anchor,
   Stack,
-  Title
+  Title,
+  Image
 } from "@mantine/core"
 import { GoogleButton } from "./GoogleButton"
 import { TwitterButton } from "./TwitterButton"
@@ -28,6 +29,7 @@ import { IconX, IconCheck } from "@tabler/icons-react"
 import { Progress, Popover, rem } from "@mantine/core"
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+
 
 function PasswordRequirement({ meets, label }) {
   return (
@@ -134,95 +136,95 @@ export function SignUp(props) {
 
 
   return (
+    <div className={classes.wrapper}>
+      <div className={classes.body}>
 
-    <Box mx="auto" >
-      <BackgroundImage
-        src="https://t3.ftcdn.net/jpg/03/95/59/24/360_F_395592429_fImkRDB7B0lLhniD7LU2ZHkBeDsWX8E2.jpg"
-        radius="md"
+      
 
-      >
-        <Center >
-          <Container  w={800} fluid me={10}>
-            <Paper withBorder shadow="md" mt={30} {...props} radius="md" p="xl" className={classes.Paper}>
-              <Title className={classes.title} >
-              SignUp</Title>
+          <Center >
+            <Container w={700} fluid me={10}>
+              <Paper withBorder shadow="md"  {...props} radius="md" p="xl" className={classes.Paper}>
+                <Title className={classes.title} >
+                  SignUp</Title>
 
-              <form onSubmit={form.onSubmit(signupSubmit)}>
+                <form onSubmit={form.onSubmit(signupSubmit)}>
 
-                <TextInput label="Name" placeholder="Full Name"  {...form.getInputProps('name')} />
+                  <TextInput label="Name" placeholder="Full Name"  {...form.getInputProps('name')} />
 
-                <TextInput withAsterisk label="Email" placeholder="your@email.com"
-                  {...form.getInputProps('email')} required mt="md" />
+                  <TextInput withAsterisk label="Email" placeholder="your@email.com"
+                    {...form.getInputProps('email')} required mt="md" />
 
-                <Popover
-                  opened={popoverOpened}
-                  position="bottom"
-                  width="target"
-                  transitionProps={{ transition: "pop" }}
-                >
-                  <Popover.Target>
-                    <div
-                      onFocusCapture={() => setPopoverOpened(true)}
-                      onBlurCapture={() => setPopoverOpened(false)}
-                    >
-                      <PasswordInput label="Password"
-                        placeholder="Your password"
-                        value={value}
-                        onChange={event => setValue(event.currentTarget.value)}
-                        error={form.errors.password && 'Password should include at least 8 characters'}
-                        mt="md"
-
-                        required />
-                    </div>
-                  </Popover.Target>
-                  <Popover.Dropdown>
-                    <Progress color={color} value={strength} size={5} mb="xs" />
-                    <PasswordRequirement
-                      label="Includes at least 6 characters"
-                      meets={value.length > 5}
-                    />
-                    {checks}
-                  </Popover.Dropdown>
-                </Popover>
-                <PasswordInput
-                  mt="sm"
-                  label="Confirm password"
-                  placeholder="Confirm password"
-                  {...form.getInputProps('confirmPassword')}
-                />
-
-
-
-                <Group justify="space-between" mt="lg">
-                  <Checkbox label="I accept the Terms of Use & Privacy Policy"
-                    checked={form.values.terms}
-                    {...form.getInputProps('termsOfService', { type: 'checkbox' })}
-                  />
-                </Group>
-                <Group justify="space-between" mt="xl">
-                  <Anchor component={Link} underline="hover" type="button" c="dimmed" href="/login" size="xs">
-                    Already have an account? Login here
-                  </Anchor>
-                  <Button type="submit" variant="outline" color="rgba(255, 255, 255, 1)"
+                  <Popover
+                    opened={popoverOpened}
+                    position="bottom"
+                    width="target"
+                    transitionProps={{ transition: "pop" }}
                   >
-                    Sign Up
-                  </Button>
-                </Group>
-                <Divider label={
-                <p style={{ color: 'grey' }}>Or Signup with</p>
-              }
-                labelPosition="center" my="lg" />
-                <Group grow mb="md" mt="md">
-                <GoogleButton radius="xl" variant="outline" color="rgba(255, 255, 255, 1)">Google</GoogleButton>
-                <TwitterButton radius="xl" variant="outline" color="rgba(255, 255, 255, 1)">Facebook</TwitterButton>
-              </Group>
-              </form>
-            </Paper>
-          </Container>
-        </Center>
-      </BackgroundImage>
-    </Box>
+                    <Popover.Target>
+                      <div
+                        onFocusCapture={() => setPopoverOpened(true)}
+                        onBlurCapture={() => setPopoverOpened(false)}
+                      >
+                        <PasswordInput label="Password"
+                          placeholder="Your password"
+                          value={value}
+                          onChange={event => setValue(event.currentTarget.value)}
+                          error={form.errors.password && 'Password should include at least 8 characters'}
+                          mt="md"
 
+                          required />
+                      </div>
+                    </Popover.Target>
+                    <Popover.Dropdown>
+                      <Progress color={color} value={strength} size={5} mb="xs" />
+                      <PasswordRequirement
+                        label="Includes at least 6 characters"
+                        meets={value.length > 5}
+                      />
+                      {checks}
+                    </Popover.Dropdown>
+                  </Popover>
+                  <PasswordInput
+                    mt="sm"
+                    label="Confirm password"
+                    placeholder="Confirm password"
+                    {...form.getInputProps('confirmPassword')}
+                  />
+
+
+
+                  <Group justify="space-between" mt="lg">
+                    <Checkbox label="I accept the Terms of Use & Privacy Policy"
+                      checked={form.values.terms}
+                      {...form.getInputProps('termsOfService', { type: 'checkbox' })}
+                    />
+                  </Group>
+                  <Group justify="space-between" mt="xl">
+                    <Anchor component={Link} underline="hover" type="button" c="dimmed" href="/login" size="xs">
+                      Already have an account? Login here
+                    </Anchor>
+                    <Button type="submit" variant="outline" color="rgba(255, 255, 255, 1)"   className={classes.button}
+                    >
+                      <p className={classes.p}>Sign Up</p>
+                    </Button>
+                  </Group>
+                  <Divider label={
+                    <p style={{ color: '#4ECA3E' }}>Or Signup with</p>
+                  }
+                    labelPosition="center" my="lg" />
+                  <Group grow mb="md" mt="md">
+                    <GoogleButton radius="xl" variant="outline" color="rgba(255, 255, 255, 1)" className={classes.control}>Google</GoogleButton>
+                    <TwitterButton radius="xl" variant="outline" color="rgba(255, 255, 255, 1)" className={classes.control}>Facebook</TwitterButton>
+                  </Group>
+                </form>
+              </Paper>
+            </Container>
+          </Center>
+
+       
+      </div>
+      <Image src="Signup.gif" className={classes.image} />
+    </div>
   )
 }
 
