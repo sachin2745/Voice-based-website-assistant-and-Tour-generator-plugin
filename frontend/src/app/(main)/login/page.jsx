@@ -26,6 +26,8 @@ import { BackgroundImage, Center, Box } from '@mantine/core';
 import Navbar from '../navbar';
 import logimg from './logimg.json';
 import Lottie from 'lottie-react';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 
 
@@ -41,20 +43,48 @@ const theme = createTheme({
 
 
 export function Login() {
+
+  const router = useRouter();
+
   const form = useForm({
     initialValues: {
       email: '',
       password: '',
-      terms: true,
+    
 
     },
 
-    validate: {
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-      password: (value) => (value.length <= 8 ? 'Password should include at least 8 characters' : null),
+    validate:  {
+      email: val => (/^\S+@\S+$/.test(val) ? null : "Invalid email"),
+      password: val =>
+        val.length <= 6 ? "Password should include at least 6 characters" : null
+    }
+  })
 
-    },
-  });
+  const loginSubmit = (values) => {
+    fetch('http://localhost:5000/user/authenticate', {
+      method: 'POST',
+      body: JSON.stringify(values),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          toast.success('loggedin successfully');
+          response.json().then(data => {
+            sessionStorage.setItem('user', JSON.stringify(data));
+            router.push('/');
+          })
+        } else {
+          toast.error('Invalid Credentials')
+        }
+      }).catch((err) => {
+        console.log(err);
+        toast.error('Invalid Credentials')
+      });
+  }
+
 
 
 
@@ -86,7 +116,7 @@ export function Login() {
                         <p style={{ color: 'grey' }}>Or continue with email</p>
                       } labelPosition="center" my="lg" color='white' />
 
-                      <form onSubmit={form.onSubmit((values) => console.log(values))}>
+                      <form onSubmit={form.onSubmit(loginSubmit)}>
 
                         <TextInput withAsterisk variant="filled" label="Email" placeholder="your@email.com"
                           {...form.getInputProps('email')} required />

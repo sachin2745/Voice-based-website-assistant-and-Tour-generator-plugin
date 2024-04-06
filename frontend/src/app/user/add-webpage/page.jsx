@@ -19,11 +19,15 @@ import toast from 'react-hot-toast';
 
 const WebPage = () => {
 
+    
+
     const webpageValidationSchema = Yup.object().shape({
         name: Yup.string().required('Name is Required').min(3, 'Name is Too Short'),
         address: Yup.string().required('Address is Required').min(6, 'Address is Too Short'),
         description: Yup.string().required('Description is Required').min(8, 'Description is Too Short')
     });
+
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
     const webpageForm = useFormik({
         initialValues: {
@@ -48,8 +52,7 @@ const WebPage = () => {
                     console.log(response.status);
                     if (response.status === 200) {
                         toast.success('User Registered successfully');
-                        setValue('');
-                        form.reset('');
+                        webpageForm.resetForm();
 
                     } else {
                         toast.error('Some Error Occured');
