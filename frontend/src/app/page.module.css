@@ -68,7 +68,9 @@
 }
 
 .image {
- 
+ height: 400px;
+ width: 400px;
+ padding-right: -300px;
   margin-top: 40px;
 
   @media (max-width: $mantine-breakpoint-md) {

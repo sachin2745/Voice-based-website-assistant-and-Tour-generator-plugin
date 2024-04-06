@@ -27,12 +27,20 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Lottie from 'lottie-react'
 import mainimg from './mainimg.json'
+import { useTypewriter,Cursor } from 'react-simple-typewriter'
 
 
 const page = () => {
 useEffect(() => {
   AOS.init({duration:2000});
 }, []);
+
+const[typeEffect]=useTypewriter({
+  words:['Voice','Tour','Navigator'],
+  loop:{},
+  typeSpeed:200,
+  delaySpeed:80
+})
 
 
   return (
@@ -49,7 +57,8 @@ useEffect(() => {
               <div className={classes.content} data-aos="fade-up">
                 <Title className={classes.title} >
                   <span className={classes.highlight}>Welcome to</span> <br />
-                  <span className={classes.subtitle}>VoiceTourNavigator </span>
+                  <span className={classes.subtitle}>{typeEffect} </span>
+                  <span style={{color:'white'}}><Cursor cursorStyle='|' /></span>
                   <br />Plugin System</Title>
                 <Text mt="md">
                   Revolutionizing Website Navigation with Voice Technology
