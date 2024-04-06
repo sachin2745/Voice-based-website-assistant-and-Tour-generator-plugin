@@ -113,7 +113,7 @@ export function Login() {
                       </Group>
 
                       <Divider label={
-                        <p style={{ color: 'grey' }}>Or continue with email</p>
+                        <p style={{ color: '#4ECA3E' }}>Or continue with email</p>
                       } labelPosition="center" my="lg" color='white' />
 
                       <form onSubmit={form.onSubmit(loginSubmit)}>
