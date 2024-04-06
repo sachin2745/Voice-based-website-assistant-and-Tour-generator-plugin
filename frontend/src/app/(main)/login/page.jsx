@@ -90,7 +90,7 @@ export function Login() {
 
   return (
     <>
-      <Navbar />
+      
 
       <div className={classes.wrapper}>
         <div className={classes.body}>
@@ -102,7 +102,7 @@ export function Login() {
 
                 <Center p="md">
                   <Container size="responsive" w={700} >
-                    <Paper withBorder shadow="md" p={30} mt={10} mb={30} radius="md" className={classes.Paper}>
+                    <Paper  shadow="md" p={30} mt={10} mb={30} radius="md" className={classes.Paper}>
                       <Title className={classes.title} >
                         Welcome to <span className={classes.subtitle}>VoiceTour</span> Navigator</Title>
                       <Text className={classes.text}>Login with</Text>

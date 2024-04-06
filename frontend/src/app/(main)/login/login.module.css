@@ -25,8 +25,8 @@
 	align-items: center;
 	padding: calc(var(--mantine-spacing-xl) * 2);
 	border-radius: var(--mantine-radius-md);
-	background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-8));
 	border: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-8));
+	background-color: black;
 
 	@media (max-width: $mantine-breakpoint-sm) {
 		flex-direction: column-reverse;
@@ -35,12 +35,12 @@
 }
 
 .Paper {
-	background: rgba(255, 255, 255, 0);
+	background: black;
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 	backdrop-filter: blur(30px);
 	-webkit-backdrop-filter: blur(0px);
 	border-radius: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-left: 5px solid #4ECA3E;
 	color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 
 
@@ -61,7 +61,7 @@
 	color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 	text-align: center;
 	margin-top: 5px;
-	
+
 	font-size: 17px;
 }
 
@@ -72,7 +72,7 @@
 	width: 50%;
 	padding: 10px 20px;
 	border-radius: 7px;
-	border: 1px solid rgb(61, 106, 255);
+	border: 1px solid #4ECA3E;
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 600;
@@ -87,8 +87,8 @@
 }
 
 .Button:hover {
-	background: rgb(61, 106, 255);
-	box-shadow: 0 0 10px 5px rgba(0, 142, 236, 0.815);
+	background: #4ECA3E;
+
 	-webkit-transition: all 0.2s ease-out;
 	-moz-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
@@ -160,8 +160,8 @@
 	align-items: center;
 	padding: 10px 15px;
 	gap: 15px;
-	background-color: #007ACC;
-	outline: 3px #007ACC solid;
+	background-color: #4ECA3E;
+	outline: 3px #4ECA3E solid;
 	outline-offset: -3px;
 	border-radius: 5px;
 	border: none;
@@ -194,9 +194,7 @@
 }
 
 .subtitle {
-	font-size:35px;
-	background: -webkit-linear-gradient(#01fffb, #4cbbff);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	font-size: 35px;
+	color: #4ECA3E;
 
 }
