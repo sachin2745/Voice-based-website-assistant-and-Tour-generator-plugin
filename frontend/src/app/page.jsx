@@ -19,6 +19,7 @@ import { IconCheck, IconProgressCheck } from "@tabler/icons-react"
 import classes from "./page.module.css"
 import FeaturesCards from './FeaturesCards'
 import Faqsection from './faqSection'
+import testimonial from './testimonial'
 import cx from 'clsx';
 import { GithubIcon } from '@mantinex/dev-icons'
 import Footer from './(main)/footer'
@@ -27,20 +28,20 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Lottie from 'lottie-react'
 import mainimg from './mainimg.json'
-import { useTypewriter,Cursor } from 'react-simple-typewriter'
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 
 const page = () => {
-useEffect(() => {
-  AOS.init({duration:2000});
-}, []);
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
 
-const[typeEffect]=useTypewriter({
-  words:['Voice','Tour','Navigator'],
-  loop:{},
-  typeSpeed:200,
-  delaySpeed:80
-})
+  const [typeEffect] = useTypewriter({
+    words: ['Voice', 'Tour', 'Navigator'],
+    loop: {},
+    typeSpeed: 200,
+    delaySpeed: 80
+  })
 
 
   return (
@@ -58,20 +59,20 @@ const[typeEffect]=useTypewriter({
                 <Title className={classes.title} >
                   <span className={classes.highlight}>Welcome to</span> <br />
                   <span className={classes.subtitle}>{typeEffect} </span>
-                  <span style={{color:'white'}}><Cursor cursorStyle='|' /></span>
+                  <span style={{ color: 'white' }}><Cursor cursorStyle='|' /></span>
                   <br />Plugin System</Title>
                 <Text mt="md">
                   Revolutionizing Website Navigation with Voice Technology
                 </Text>
 
-                <List className={classes.List} size="md" mt="xl" spacing="sm" 
+                <List className={classes.List} size="md" mt="xl" spacing="sm"
 
                   icon={
                     <ThemeIcon size={20} radius="xl" style={{ backgroundImage: 'linear-gradient(to right, #01fffb, #4cbbff)' }}>
                       <IconCheck
                         style={{ width: rem(12), height: rem(12) }}
                         stroke={5}
-                    color='black'
+                        color='black'
                       />
                     </ThemeIcon>
                   }
@@ -100,7 +101,7 @@ const[typeEffect]=useTypewriter({
 
                 <Group className={classes.controls}>
                   <Button
-                  variant='outline'
+                    variant='outline'
                     size="sm"
                     className={classes.control}
                     color="rgba(0, 0, 0, 1)"
@@ -121,8 +122,8 @@ const[typeEffect]=useTypewriter({
                 </Group>
 
               </div>
-              
-              <Lottie loop={true} animationData={mainimg} size='xl' className={classes.image} data-aos="fade-up"  />
+
+              <Lottie loop={true} animationData={mainimg} size='xl' className={classes.image} data-aos="fade-up" />
             </div>
           </Container>
 
@@ -132,7 +133,7 @@ const[typeEffect]=useTypewriter({
       <FeaturesCards />
 
       <Faqsection />
-
+      <testimonial />
 
       <Footer />
     </>
