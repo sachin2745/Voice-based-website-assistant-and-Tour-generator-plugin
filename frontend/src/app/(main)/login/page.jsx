@@ -50,11 +50,11 @@ export function Login() {
     initialValues: {
       email: '',
       password: '',
-    
+
 
     },
 
-    validate:  {
+    validate: {
       email: val => (/^\S+@\S+$/.test(val) ? null : "Invalid email"),
       password: val =>
         val.length <= 6 ? "Password should include at least 6 characters" : null
@@ -62,7 +62,8 @@ export function Login() {
   })
 
   const loginSubmit = (values) => {
-    fetch('http://localhost:5000/user/authenticate', {
+    console.log(values);
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/authenticate`, {
       method: 'POST',
       body: JSON.stringify(values),
       headers: {
@@ -90,7 +91,7 @@ export function Login() {
 
   return (
     <>
-      
+
 
       <div className={classes.wrapper}>
         <div className={classes.body}>
@@ -102,7 +103,7 @@ export function Login() {
 
                 <Center p="md">
                   <Container size="responsive" w={700} >
-                    <Paper  shadow="md" p={30} mt={10} mb={30} radius="md" className={classes.Paper}>
+                    <Paper shadow="md" p={30} mt={10} mb={30} radius="md" className={classes.Paper}>
                       <Title className={classes.title} >
                         Welcome to <span className={classes.subtitle}>VoiceTour</span> Navigator</Title>
                       <Text className={classes.text}>Login with</Text>
@@ -122,7 +123,7 @@ export function Login() {
                           {...form.getInputProps('email')} required />
 
                         <PasswordInput label="Password"
-                        variant="filled"
+                          variant="filled"
                           placeholder="Your password"
                           value={form.values.password}
                           onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}

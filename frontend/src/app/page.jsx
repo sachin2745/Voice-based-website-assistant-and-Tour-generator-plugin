@@ -19,7 +19,6 @@ import { IconCheck, IconProgressCheck } from "@tabler/icons-react"
 import classes from "./page.module.css"
 import FeaturesCards from './FeaturesCards'
 import Faqsection from './faqSection'
-import testimonial from './testimonial'
 import cx from 'clsx';
 import { GithubIcon } from '@mantinex/dev-icons'
 import Footer from './(main)/footer'
@@ -29,6 +28,8 @@ import 'aos/dist/aos.css'
 import Lottie from 'lottie-react'
 import mainimg from './mainimg.json'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
+import { CardsCarousel } from './CardsCarousel'
+
 
 
 const page = () => {
@@ -133,7 +134,7 @@ const page = () => {
       <FeaturesCards />
 
       <Faqsection />
-      <testimonial />
+      <CardsCarousel/>
 
       <Footer />
     </>
