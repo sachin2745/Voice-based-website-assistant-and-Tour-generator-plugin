@@ -1,27 +1,20 @@
 .card {
-  height: rem(440px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: visible;
+  padding: var(--mantine-spacing-xl);
+  padding-top: calc(var(--mantine-spacing-xl) * 1.5 + rem(20px));
+  background-color: black;
+}
+
+.icon {
+  position: absolute;
+  top: rem(-20px);
+  left: calc(50% - rem(30px));
 }
 
 .title {
   font-family:
     Greycliff CF,
-    sans-serif;
-  font-weight: 900;
-  color: var(--mantine-color-white);
-  line-height: 1.2;
-  font-size: rem(32px);
-  margin-top: var(--mantine-spacing-xs);
-}
-
-.category {
-  color: var(--mantine-color-white);
-  opacity: 0.7;
-  font-weight: 700;
-  text-transform: uppercase;
+    var(--mantine-font-family);
+  line-height: 1;
 }

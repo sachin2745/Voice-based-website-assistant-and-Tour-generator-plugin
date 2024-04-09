@@ -1,90 +1,65 @@
 'use client'
 import React from 'react'
-import { Carousel } from "@mantine/carousel"
-import { useMediaQuery } from "@mantine/hooks"
-import { Paper, Text, Title, Button, useMantineTheme, rem } from "@mantine/core"
 import classes from "./CardsCarousel.module.css"
+import { ThemeIcon, Progress, Text, Group, Badge, Paper, rem, Container, SimpleGrid } from '@mantine/core';
+import { IconSwimming } from '@tabler/icons-react';
+import { Avatar } from '@mantine/core';
 
-function Card({ image, title, category }) {
-  return (
-    <Paper
-      shadow="md"
-      p="xl"
-      radius="md"
-      style={{ backgroundImage: `url(${image})` }}
-      className={classes.card}
-    >
-      <div>
-        <Text className={classes.category} size="xs">
-          {category}
-        </Text>
-        <Title order={3} className={classes.title}>
-          {title}
-        </Title>
-      </div>
-      <Button variant="white" color="dark">
-        Read article
-      </Button>
-    </Paper>
-  )
-}
 
-const data = [
+
+const mockdata = [
   {
-    image:
-      "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Best forests to visit in North America",
-    category: "nature"
+    image: 'ava.jpg',
+    name: "Sarah M",
+    email:
+      "@sarahm",
+      description:
+      "Using the Voice Assistant on this website has been a game-changer for me. It's so intuitive and easy to use, and it's made navigating complex websites a breeze!"
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Hawaii beaches review: better than you think",
-    category: "beach"
+    image: 'ava.jpg',
+    name: "John D.",
+    email:
+      "@johnd",
+      description:
+      "I'm amazed by the accuracy and responsiveness of the Voice Assistant. It's like having a personal guide right there to help me find what I need quickly and efficiently."
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1608481337062-4093bf3ed404?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Mountains at night: 12 best locations to enjoy the view",
-    category: "nature"
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Aurora in Norway: when to visit for best experience",
-    category: "nature"
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Best places to visit this winter",
-    category: "tourism"
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Active volcanos reviews: travel at your own risk",
-    category: "nature"
+    image: 'micimg.png',
+    name: "Emily L.",
+    email:
+      "@emilyl",
+      description:
+      "As someone with visual impairment, the Voice Assistant has truly enhanced my online experience. It's incredibly empowering to be able to navigate websites with just my voice."
   }
 ]
 
 export function CardsCarousel() {
-  const theme = useMantineTheme()
-  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`)
-  const slides = data.map(item => (
-    <Carousel.Slide key={item.title}>
-      <Card {...item} />
-    </Carousel.Slide>
-  ))
+
+
+  const features = mockdata.map((feature) => (
+    <Paper radius="md" withBorder className={classes.card} >
+      <ThemeIcon className={classes.icon} size={60} radius={60} >
+        <Avatar src={[feature.image]} alt="it's me" style={{ width: rem(52), height: rem(52) }} />
+      </ThemeIcon>
+
+      <Text ta="center" fw={700} className={classes.title}>
+        {feature.name}
+      </Text>
+      <Text c="dimmed" ta="center" fz="sm">
+        {feature.email}
+      </Text>
+      <Text fz="sm" ta="center">
+        {feature.description}
+      </Text>
+    </Paper>
+  ));
 
   return (
-    <Carousel
-      slideSize={{ base: "100%", sm: "50%" }}
-      slideGap={{ base: rem(2), sm: "xl" }}
-      align="start"
-      slidesToScroll={mobile ? 1 : 2}
-    >
-      {slides}
-    </Carousel>
+    <Container size="xl" py="xl" >
+      <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl">
+        {features}
+      </SimpleGrid>
+    </Container>
   )
 }
