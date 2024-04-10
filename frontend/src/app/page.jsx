@@ -28,7 +28,7 @@ import 'aos/dist/aos.css'
 import Lottie from 'lottie-react'
 import mainimg from './mainimg.json'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
-import { CardsCarousel } from './CardsCarousel'
+import Testimonial from './Testimonial'
 
 
 
@@ -134,7 +134,8 @@ const page = () => {
       <FeaturesCards />
 
       <Faqsection />
-      <CardsCarousel/>
+     
+      <Testimonial/>
 
       <Footer />
     </>
