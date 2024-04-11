@@ -29,6 +29,8 @@ import Lottie from 'lottie-react'
 import mainimg from './mainimg.json'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import Testimonial from './Testimonial'
+import HeroBullet from './HeroBullet'
+
 
 
 
@@ -134,8 +136,10 @@ const page = () => {
       <FeaturesCards />
 
       <Faqsection />
-     
-      <Testimonial/>
+
+                <HeroBullet/>
+
+      <Testimonial />
 
       <Footer />
     </>
