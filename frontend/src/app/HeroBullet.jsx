@@ -10,7 +10,8 @@ export function HeroBullet() {
         <Container fluid className={classes.Container}>
             <div className={classes.inner}>
                 <Group className={classes.Right}>
-                    <Text c='green' p={5}>Use Cases</Text>
+                    <Text c='green' p={5}>Use Cases</Text><br />
+                    {' '}
                     <Title className={classes.Title}> Enhance Your Projects with<br /> Voice Assistant</Title>
                     <p className={classes.P}> Discover seamless website navigation like never before with our Voice Assistant feature. Say goodbye to traditional browsing methods and embrace the future of hands-free interaction. Experience convenience, efficiency, and accessibility at your fingertips.</p>
                     <Paper shadow="xs" radius="xs" className={classes.paper}>
@@ -70,11 +71,11 @@ export function HeroBullet() {
                     </Paper>
                 </Group>
 
-                <Group className={classes.Left}>
+                <Group >
                     <Paper shadow="xs" radius="xs" p="xl" className={classes.Paper}>
-                        <Card shadow="sm" padding="lg" radius="md" withBorder className={classes.Card}>
+                        <Card shadow="sm" padding="lg" radius="md" withBorder c='#1B1919' className={classes.Card}>
                             <Card.Section>
-                                <Image src='micimg.png' />
+                                <Image src='micimg.png' className={classes.image} />
                             </Card.Section>
                         </Card>
                     </Paper>

@@ -2,7 +2,7 @@
 import React from 'react'
 import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem, Card, Flex, Paper } from '@mantine/core';
 import { IconCheck } from '@tabler/icons-react';
-import classes from './HeroBullet.module.css';
+import classes from './HeroBullet2.module.css';
 
 const HeroBullet2 = () => {
   return (
