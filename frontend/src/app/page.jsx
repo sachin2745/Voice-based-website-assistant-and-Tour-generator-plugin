@@ -30,6 +30,7 @@ import mainimg from './mainimg.json'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import Testimonial from './Testimonial'
 import HeroBullet from './HeroBullet'
+import HeroBullet2 from './HeroBullet2'
 
 
 
@@ -137,7 +138,8 @@ const page = () => {
 
       <Faqsection />
 
-                <HeroBullet/>
+      <HeroBullet />
+      <HeroBullet2 />
 
       <Testimonial />
 
