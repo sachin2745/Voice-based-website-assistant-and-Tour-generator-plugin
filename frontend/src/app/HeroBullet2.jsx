@@ -5,21 +5,21 @@ import { IconCheck } from '@tabler/icons-react';
 import classes from './HeroBullet2.module.css';
 
 const HeroBullet2 = () => {
-  return (
-    <Container fluid className={classes.Container}>
+    return (
+        <Container fluid className={classes.Container}>
             <div className={classes.inner}>
                 <Group className={classes.Right}>
-                <Paper shadow="xs" radius="xs" p="xl" className={classes.Paper}>
-                        <Card shadow="sm" padding="lg" radius="md" withBorder className={classes.Card}>
+                    <Paper shadow="xs" radius="xs" p="xl" className={classes.Paper}>
+                        <Card shadow="sm" padding="lg" radius="md" withBorder c='#1B1919' className={classes.Card}>
                             <Card.Section>
-                                <Image src='micimg.png' />
+                                <Image src='micimg.png' className={classes.image} />
                             </Card.Section>
                         </Card>
                     </Paper>
                 </Group>
 
                 <Group className={classes.Left}>
-                <Text c='green' p={5}>Use Cases</Text>
+                    <Text c='green' p={5}>Use Cases</Text>
                     <Title className={classes.Title}> Enhance Your Projects with<br /> Voice Assistant</Title>
                     <p className={classes.P}> Discover seamless website navigation like never before with our Voice Assistant feature. Say goodbye to traditional browsing methods and embrace the future of hands-free interaction. Experience convenience, efficiency, and accessibility at your fingertips.</p>
                     <Paper shadow="xs" radius="xs" className={classes.paper}>
@@ -80,7 +80,7 @@ const HeroBullet2 = () => {
                 </Group>
             </div>
         </Container>
-  )
+    )
 }
 
 export default HeroBullet2
