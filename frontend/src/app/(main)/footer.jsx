@@ -48,6 +48,7 @@ const data = [
           component="a"
           href={link.link}
           onClick={event => event.preventDefault()}
+    style={{color:'#7FFF00'}}
         >
           {link.label}
         </Text>

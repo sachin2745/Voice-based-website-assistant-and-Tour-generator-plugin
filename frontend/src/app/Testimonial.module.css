@@ -4,8 +4,8 @@
     padding: 10px;
     padding-top: 30px;
     padding-right: 50px;
-    background-color: white;
-    color: #1B1919;
+    background-color: #166d3b;
+background-image: linear-gradient(147deg, #166d3b 0%, #000000 74%);
     height: 250px;
     width: 350px;
    
@@ -18,7 +18,7 @@
   }
   
   .name {
-    color: #4ECA3E;
+    color: #7fff00;
   font-size: 25px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     line-height: 1;
@@ -41,5 +41,9 @@
     &[data-active] {
       width: rem(40px);
     }
+  }
+  .Carousel{
+    background-color: #166d3b;
+background-image: linear-gradient(147deg, #166d3b 0%, #000000 74%);
   }
   

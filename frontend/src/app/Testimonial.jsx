@@ -14,7 +14,7 @@ const Testimonial = () => {
 
         <Carousel
             withIndicators
-            classNames={classes}
+            className={classes.Carousel}
             withControls={false}
             height={350}
             slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}
@@ -26,7 +26,7 @@ const Testimonial = () => {
             onMouseLeave={autoplay.current.reset}
         >
             <Carousel.Slide>
-                <Container p={50} py="xl">
+                <Container p={50} py="xl" >
                     <Paper radius="md" withBorder className={classes.card} >
 
                         <Grid grow gutter="xl">
