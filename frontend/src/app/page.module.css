@@ -19,7 +19,12 @@
 }
 
 .title {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  
+  background-color: #2234ae;
+  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   font-family:
     Greycliff CF,
     var(--mantine-font-family);
@@ -35,7 +40,8 @@
 
 .subtitle {
 
-  background: -webkit-linear-gradient(#01fffb, #4cbbff);
+  background-color: #2234ae;
+  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -79,6 +85,12 @@
 .highlight {
   position: relative;
   font-weight: 100;
+  
+  background-color: #2234ae;
+  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 .List{
   color: black;
