@@ -19,7 +19,9 @@ const theme = createTheme({
 
 export default function RootLayout({ children }) {
 const myStyles = {
-  backgroundColor: '#181123',
+
+  backgroundColor:' #166d3b',
+backgroundImage:' linear-gradient(147deg, #166d3b 0%, #000000 74%)'
 }
 
   return (
