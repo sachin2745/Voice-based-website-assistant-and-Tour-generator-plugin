@@ -65,7 +65,7 @@ const page = () => {
                   <span className={classes.subtitle}>{typeEffect} </span>
                   <span style={{ color: 'white' }}><Cursor cursorStyle='|' /></span>
                   <br />Plugin System</Title>
-                <Text mt="md">
+                <Text mt="md" style={{color:'grey'}}>
                   Revolutionizing Website Navigation with Voice Technology
                 </Text>
 

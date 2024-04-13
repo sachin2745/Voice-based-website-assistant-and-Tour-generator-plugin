@@ -15,16 +15,11 @@
     margin-right: 0;
   }
 }
-.box{
-}
+
+.box {}
 
 .title {
-  
-  background-color: #2234ae;
-  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
+ color: white;
   font-family:
     Greycliff CF,
     var(--mantine-font-family);
@@ -39,9 +34,9 @@
 }
 
 .subtitle {
-
-  background-color: #2234ae;
-  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+  background-color: #e7eff9;
+  background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+  
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -57,11 +52,12 @@
 }
 
 .control {
-  
+  background-color: #c3cbdc;
+  background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
   height: rem(50px);
   padding-left: rem(38px);
   padding-right: rem(38px);
-  
+
 
   @media (max-width: $mantine-breakpoint-sm) {
     height: rem(54px);
@@ -72,9 +68,9 @@
 }
 
 .image {
- height: 400px;
- width: 400px;
- padding-right: -300px;
+  height: 400px;
+  width: 400px;
+  padding-right: -300px;
   margin-top: 40px;
 
   @media (max-width: $mantine-breakpoint-md) {
@@ -85,13 +81,17 @@
 .highlight {
   position: relative;
   font-weight: 100;
-  
-  background-color: #2234ae;
-  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+  background-color: #e7eff9;
+  background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
 }
-.List{
-  color: black;
+
+.List {
+  background-color: #c3cbdc;
+background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
