@@ -18,14 +18,19 @@ const theme = createTheme({
 });
 
 export default function RootLayout({ children }) {
+const myStyles = {
+  backgroundColor: '#2234ae',
+backgroundImage: 'linear-gradient(180deg, #2234ae 0%, #191714 50%)'
+}
+
   return (
     <html lang="en">
 
       <body className={inter.className}>
         <MantineProvider theme={theme} defaultColorScheme="dark">
-         
+         <div style={myStyles}>
          {children}
-         
+         </div>
           
         </MantineProvider>
       </body>
