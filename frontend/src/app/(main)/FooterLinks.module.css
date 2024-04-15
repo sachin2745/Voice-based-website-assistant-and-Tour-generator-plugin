@@ -1,5 +1,5 @@
 .footer {
-  
+
   margin-top: rem(0px);
   padding-top: calc(var(--mantine-spacing-xl) * 2);
   padding-bottom: calc(var(--mantine-spacing-xl) * 2);
@@ -90,3 +90,5 @@
     margin-top: var(--mantine-spacing-xs);
   }
 }
+
+ 
