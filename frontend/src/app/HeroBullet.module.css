@@ -1,15 +1,12 @@
 .Paper {
   background-color: black;
-
- 
-
 }
 
 .inner {
   display: flex;
   justify-content: space-between;
-  
-
+  border: 1px solid white;
+  border-radius: 20px;
 
   @media (max-width: $mantine-breakpoint-md) {
     flex-direction: column;
