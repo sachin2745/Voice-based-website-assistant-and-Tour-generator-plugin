@@ -95,3 +95,18 @@ background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 }
+
+@keyframes circle-swoop {
+  from {
+    clip-path: var(--circle-top-right-out);
+  }
+  to {
+    clip-path: var(--circle-bottom-right-in);
+  }
+}
+
+.--in-custom {
+  --transition__duration: 1s;
+  --transition__easing: ease-in-out;
+  animation-name: circle-swoop;
+}

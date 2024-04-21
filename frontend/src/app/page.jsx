@@ -54,7 +54,7 @@ const page = () => {
       <Navbar />
 
 
-      <section  >
+      <section >
         <Box mx="auto" className={classes.box}>
 
           <Container  >
